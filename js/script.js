@@ -1,14 +1,10 @@
 $(function() {
 
-    $("#red-box").hide(1000);
-    $("#green-box").hide(1000);
-    $("#blue-box").hide(1000);
+    $("#red-box").slideDown(1000);
+    $("#blue-box").slideUp(1000);
+    $("#green-box").slideUp(2000);
+    $("#green-box").slideDown(2000);
 
-    $("#red-box").show(1000);
-    $("#green-box").show(2000);
-    $("#blue-box").show(3000);
-
-    $("#blue-box").toggle(2000);
-    $("#blue-box").toggle(2000);
-
+    $("p").hide();
+    $("p").slideDown(3000);
 });
