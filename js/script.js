@@ -1,10 +1,22 @@
 $(function() {
+    $("#blue-box").animate({
+        "margin-left": "+=200px",
+        "margin-top": "25px",
+        "opacity": "0",
+        "height": "50px",
+        "width": "50px"
+    }, 1000);
 
-    $("#red-box").slideDown(1000);
-    $("#blue-box").slideUp(1000);
-    $("#green-box").slideUp(2000);
-    $("#green-box").slideDown(2000);
+    $("#blue-box").animate({
+        "margin-left": "-=200px",
+        "opacity": "0.75"
+    }, 250);
 
-    $("p").hide();
-    $("p").slideDown(3000);
+    $("#red-box").animate({
+        "margin-top": "-=125px"
+    }, 250);
+
+    $("p").animate({
+        "font-size": "20px"
+    }, 1000);
 });
