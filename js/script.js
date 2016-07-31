@@ -1,16 +1,19 @@
 $(function() {
-    $("#list1")
-        .append("<li>Main Item 5" +
-                "<ul>" +
-                "<li>Inserted 1</li>" +
-                "</i>Inserted 2</li>" +
-                "</ul>" +
-                "</li>");
+    $("#list4")
+        .children("li")
+        .children("ul")
+        .children("li")
+        .filter(function(index){
+            return index % 3 === 0;
+        })
+        .replaceWith("<li class='highlight1'> Replaced </li>");
 
-    $("#list1").children("li:last").addClass("highlight1");
+    $("#red-box").replaceWith("<div id=purple-box>Purple</div>");
 
-    $("#red-box").after("<div id='purple-box'>Purple</div>");
-    $("#purple-box").before("<div id='orange-box'>Orange</div>");
+    $("#blue-box").remove();
 
-    $("#blue-box").after($("#red-box"));
+    var detachedItem = $("#list3").children("li:last").detach();
+    $("#list2").append(detachedItem);
+
+    $('#list1').empty();
 });
