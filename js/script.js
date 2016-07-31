@@ -1,5 +1,21 @@
 $(function() {
-    $("#red-box").fadeTo(1000, .25).delay(3000).fadeTo(1000, 1.0);
-    $("#green-box").delay(1000).fadeTo(1000, .25);
-    $("#blue-box").delay(2000).fadeTo(1000, .25);
+    $("#list1").children("li").addClass("highlight1");
+    $("#list2").find("li").addClass("highlight2");
+    $("#list3").find("ul").addClass("highlight3");
+    $("#list4").find("ul").addClass("highlight4");
+
+    $("#list4")
+        .children("li")
+        .children("ul")
+        .children("li")
+        .filter(function(index){
+            return index % 3 === 0;
+        })
+        .css("background-color", "rgba(255, 150, 200, 1)");
+
+    $("#list1")
+        .children("li")
+        .not(":first")
+        .not(":last")
+        .css("background-color", "rgba(255, 150, 200, 1)");
 });
