@@ -1,19 +1,17 @@
 $(function() {
-    $("#list4")
-        .children("li")
-        .children("ul")
-        .children("li")
-        .filter(function(index){
-            return index % 3 === 0;
-        })
-        .replaceWith("<li class='highlight1'> Replaced </li>");
+    // attr(), prop(), val()
 
-    $("#red-box").replaceWith("<div id=purple-box>Purple</div>");
+    var link = $("#link");
+    link.attr("href", "www.facebook.com");
+    console.log(link.attr("href"));
 
-    $("#blue-box").remove();
+    var cb = $('#cb');
+    console.log(cb.prop("checked"));
+    console.log(cb.attr("checked"));
 
-    var detachedItem = $("#list3").children("li:last").detach();
-    $("#list2").append(detachedItem);
+    var text = $('#text');
+    console.log(text.val());
 
-    $('#list1').empty();
+    var range = $('#range');
+    console.log(range.val());
 });
