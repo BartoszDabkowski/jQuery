@@ -1,17 +1,18 @@
 $(function() {
-    // attr(), prop(), val()
+    var gallery = $(".gallery").find("img").first();
 
-    var link = $("#link");
-    link.attr("href", "www.facebook.com");
-    console.log(link.attr("href"));
+    var images = [
+        "images/laptop-mobile_small.jpg",
+        "images/laptop-on-table_small.jpg",
+        "images/people-office-group-team_small.jpg"
+    ];
 
-    var cb = $('#cb');
-    console.log(cb.prop("checked"));
-    console.log(cb.attr("checked"));
-
-    var text = $('#text');
-    console.log(text.val());
-
-    var range = $('#range');
-    console.log(range.val());
+    var i = 0;
+    setInterval(function(){
+        i = (i + 1) % images.length;
+        gallery.fadeOut(function(){
+            $(this).attr("src", images[i]);
+            $(this).fadeIn();
+        });
+    }, 2000);
 });
